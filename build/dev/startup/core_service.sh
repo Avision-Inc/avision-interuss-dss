@@ -12,11 +12,11 @@ if [ "$DEBUG_ON" = "1" ]; then
 
   dlv --headless --listen=:4000 --api-version=2 --accept-multiclient exec --continue /usr/bin/core-service -- \
   -cockroach_host local-dss-crdb \
-  -public_key_files /var/test-certs/auth2.pem \
+  -public_key_files /var/test-certs/bne-nm.pem \
   -reflect_api \
   -log_format console \
   -dump_requests \
-  -accepted_jwt_audiences localhost,host.docker.internal,local-gateway,dss_sandbox_local-dss-http-gateway_1 \
+  -accepted_jwt_audiences localhost,host.docker.internal,local-gateway,dss_sandbox_local-dss-http-gateway_1,susi-dev.avision.io,bne-dev.avision.io \
   -enable_scd \
   -enable_http
 else
@@ -24,11 +24,11 @@ else
 
   /usr/bin/core-service \
   -cockroach_host local-dss-crdb \
-  -public_key_files /var/test-certs/auth2.pem \
+  -public_key_files /var/test-certs/bne-nm.pem \
   -reflect_api \
   -log_format console \
   -dump_requests \
-  -accepted_jwt_audiences localhost,host.docker.internal,local-gateway,dss_sandbox_local-dss-http-gateway_1 \
+  -accepted_jwt_audiences localhost,host.docker.internal,local-gateway,dss_sandbox_local-dss-http-gateway_1,susi-dev.avision.io,bne-dev.avision.io \
   -enable_scd \
   -enable_http
 fi
