@@ -12,7 +12,7 @@ if [ "$DEBUG_ON" = "1" ]; then
 
   dlv --headless --listen=:4000 --api-version=2 --accept-multiclient exec --continue /usr/bin/core-service -- \
   -cockroach_host local-dss-crdb \
-  -public_key_files /var/test-certs/susi.pem \
+  -public_key_files /var/test-certs/bne-nm.pem \
   -reflect_api \
   -log_format console \
   -dump_requests \
@@ -24,7 +24,7 @@ else
 
   /usr/bin/core-service \
   -cockroach_host local-dss-crdb \
-  -public_key_files /var/test-certs/susi.pem \
+  -public_key_files /var/test-certs/bne-nm.pem \
   -reflect_api \
   -log_format console \
   -dump_requests \
